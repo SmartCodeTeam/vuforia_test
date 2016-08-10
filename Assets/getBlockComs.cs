@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.IO;
 
 public class getBlockComs : MonoBehaviour {
 
@@ -36,8 +36,11 @@ public class getBlockComs : MonoBehaviour {
 			Debug.Log (pair.Key+":"+pair.Value);
 			if(status[pair.Key]==1){//blockのstatusが1、つまり見えてるやつだけコマンドブロックとして出力
 				DataManager.Instance.commandText+=pair.Key+"\n"+pair.Value+"\n";
+				DataManager.Instance.blockCodes.Add(pair.Key);
+
 			}
 		}//うまくいかない！//解決!
 
 	}
+
 }

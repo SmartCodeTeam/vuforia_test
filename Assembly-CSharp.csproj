@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8676D97A-40A9-576E-7BB1-A2FB8E10CF5F}</ProjectGuid>
+    <ProjectGuid>{04C4E70E-544C-74A8-2B8F-7BC778607E32}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -47,6 +47,12 @@
   <ItemGroup>
      <Compile Include="Assets\DataManager.cs" />
      <Compile Include="Assets\GetPosInCameraFlame.cs" />
+     <Compile Include="Assets\Scripts\Scene_changer.cs" />
+     <Compile Include="Assets\Scripts\Scene_changer1.cs" />
+     <Compile Include="Assets\Scripts\cameraControl.cs" />
+     <Compile Include="Assets\Scripts\hurdle_set.cs" />
+     <Compile Include="Assets\Scripts\moveBall.cs" />
+     <Compile Include="Assets\ToComsCheck.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />
@@ -90,7 +96,6 @@
      <Compile Include="Assets\Vuforia\Scripts\positionDisp.cs" />
      <Compile Include="Assets\Vuforia\Scripts\positionGetter.cs" />
      <Compile Include="Assets\getBlockComs.cs" />
-     <None Include="Assets\StreamingAssets\QCAR\aruco_ars.xml" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\link.xml" />
      <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
@@ -100,10 +105,12 @@
      <None Include="Assets\Vuforia\Editor\WebcamProfiles\profiles.xml" />
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
      <None Include="Assets\readme_SDK.txt" />
+     <None Include="Assets\ComFile.txt" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
+     <None Include="Assets\StreamingAssets\QCAR\aruco_ars.xml" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
@@ -111,7 +118,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Vuforia.UnityExtensions">
- <HintPath>/Users/Yoshihiko/coding/UnityProjects/vuforia_test/Assets/Vuforia/Scripts/Internal/Vuforia.UnityExtensions.dll</HintPath>
+ <HintPath>/Users/Yoshihiko/coding/UnityProjects/integ/Assets/Vuforia/Scripts/Internal/Vuforia.UnityExtensions.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

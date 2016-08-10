@@ -1,0 +1,12 @@
+for,3
+up
+end_for
+
+for,3
+right
+up
+up
+left
+up
+up
+end_for

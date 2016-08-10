@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/blocks.unity
+- path: Assets/_Scenes/Show_Commands.unity
   isLoaded: 1
   isActive: 1

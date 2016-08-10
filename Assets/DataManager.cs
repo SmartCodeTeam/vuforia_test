@@ -9,15 +9,16 @@ public class DataManager : MonoBehaviour {
 	public Vector3 hoge;
 	public Vector3 hogeInCamera;
 	public Dictionary<string, Vector3> rawBlocks = new Dictionary<string, Vector3> () {
-		{"init", new Vector3(1,2,3)}
+		{"init num", new Vector3(1,2,3)}
 	};
 	public Dictionary<string, Vector3> cameraFrameBlocks = new Dictionary<string, Vector3> () {
-		{"init", new Vector3(0.1f,0.1f,0.1f)}
+		{"init num", new Vector3(0.1f,0.1f,0.1f)}
 	};
 	public Dictionary<string, int> blockStatus = new Dictionary<string, int> () {
-		{"init", 0}//ロスト時は0, トラック時は1
+		{"init num", 0}//ロスト時は0, トラック時は1
 	};
 	public List<string> blockCodes = new List<string>();
+	public List<string> fixedBlockCodes = new List<string>();
 	public string commandText="";
 
 	public static DataManager Instance{
