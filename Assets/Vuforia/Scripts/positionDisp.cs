@@ -27,7 +27,7 @@ public class positionDisp : MonoBehaviour {
 		foreach (KeyValuePair<string, Vector3> pair in DataManager.Instance.cameraFrameBlocks) {//http://qiita.com/kwst/items/2cfd01b7f28daf0f495e
 			Debug.Log("Key"+pair.Key);
 			Debug.Log("status"+pair.Key+" "+status[pair.Key]);
-			if(status[pair.Key]==1){//blockのstatusが1、つまり見えてるやつだけコマンドブロックとして出力
+			if(status[pair.Key]==2){//blockのstatusが1のとき// やっぱひょうじしない
 				myText.text=myText.text+pair.Key+"\n";
 				myText.text=myText.text+pair.Value.ToString("F2")+"\n";
 			}
