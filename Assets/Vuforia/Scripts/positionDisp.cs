@@ -23,9 +23,17 @@ public class positionDisp : MonoBehaviour {
 		Vector3 targetPosInCamera = DataManager.Instance.hogeInCamera;
 //		myText.text = targetPos.ToString("F3")+"\n"+targetPosInCamera.ToString("F3");
 		myText.text="";
+		Dictionary<string, int> status =DataManager.Instance.blockStatus;
 		foreach (KeyValuePair<string, Vector3> pair in DataManager.Instance.cameraFrameBlocks) {//http://qiita.com/kwst/items/2cfd01b7f28daf0f495e
-			myText.text=myText.text+pair.Key+"\n";
-			myText.text=myText.text+pair.Value.ToString("F2")+"\n";
+			Debug.Log("Key"+pair.Key);
+			Debug.Log("status"+pair.Key+" "+status[pair.Key]);
+			if(status[pair.Key]==1){//blockのstatusが1、つまり見えてるやつだけコマンドブロックとして出力
+				myText.text=myText.text+pair.Key+"\n";
+				myText.text=myText.text+pair.Value.ToString("F2")+"\n";
+			}
+		}
+		foreach (KeyValuePair<string, int> pair in status ) {//http://qiita.com/kwst/items/2cfd01b7f28daf0f495e
+			myText.text=myText.text+pair.Key+" "+pair.Value+"\n";
 		}
 		myText.text += "\n"+"COMMANDS"+"\n"+DataManager.Instance.commandText;
 //		Vector3 viewPos = camera.WorldToViewportPoint(targetPos);
@@ -33,5 +41,6 @@ public class positionDisp : MonoBehaviour {
 //			print("target is on the right side!");
 //		else
 //			print("target is on the left side!");
+
 	}
 }

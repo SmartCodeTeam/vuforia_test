@@ -12,7 +12,10 @@ public class DataManager : MonoBehaviour {
 		{"init", new Vector3(1,2,3)}
 	};
 	public Dictionary<string, Vector3> cameraFrameBlocks = new Dictionary<string, Vector3> () {
-		{"init", new Vector3(1,2,3)}
+		{"init", new Vector3(0.1f,0.1f,0.1f)}
+	};
+	public Dictionary<string, int> blockStatus = new Dictionary<string, int> () {
+		{"init", 0}//ロスト時は0, トラック時は1
 	};
 	public List<string> blockCodes = new List<string>();
 	public string commandText="";

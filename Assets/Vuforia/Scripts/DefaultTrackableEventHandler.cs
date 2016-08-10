@@ -51,10 +51,18 @@ namespace Vuforia
                 newStatus == TrackableBehaviour.Status.TRACKED ||
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
             {
+				//加えた(2016/8/10)
+				DataManager.Instance.blockStatus.Remove(name);
+				DataManager.Instance.blockStatus.Add(name,1);
+				//ここまで
                 OnTrackingFound();
             }
             else
             {
+				//加えた(2016/8/10)
+				DataManager.Instance.blockStatus.Remove(name);
+				DataManager.Instance.blockStatus.Add(name,0);
+				//ここまで
                 OnTrackingLost();
             }
         }

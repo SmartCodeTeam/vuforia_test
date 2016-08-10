@@ -1,1 +1,0 @@
-# vuforia_test
