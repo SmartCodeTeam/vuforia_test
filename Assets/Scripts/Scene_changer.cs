@@ -13,8 +13,8 @@ public class Scene_changer : MonoBehaviour {
 	private GUISkin buttonGuiSkin;  //ボタンのスタイル設定用 http://qiita.com/Jshirius/items/4a64e1996e4acb2b4aed
 
 	private string[] imaginary_commands = {"right","up","up"};//{"for","up","down","left","for_end","if","hole","if_end","up","down","left","up","down","left"};
-	private int button_height = 30;
-	private int button_width = 160;
+	private int button_height = 70;
+	private int button_width = 200;
 	private string[] coms={};
 	private int comLength=0;
 	private int indent =0;

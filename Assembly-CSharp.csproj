@@ -53,6 +53,8 @@
      <Compile Include="Assets\Scripts\hurdle_set.cs" />
      <Compile Include="Assets\Scripts\moveBall.cs" />
      <Compile Include="Assets\ToComsCheck.cs" />
+     <Compile Include="Assets\ToComsCheckFromGame.cs" />
+     <Compile Include="Assets\ToMiniGames.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />
