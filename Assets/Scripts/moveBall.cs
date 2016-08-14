@@ -31,7 +31,7 @@ public class moveBall : MonoBehaviour {
 		RefX=transform.position.x;
 		RefZ=transform.position.z;
 //		commandList=ReadComFile();//テキストからコマンド読み込み
-		commandList=DataManager.Instance.fixedBlockCodes.ToArray();//Vuforiaの方からコマンド読み込み
+		commandList=DataManager.Instance.gameCodes;//VuforiaのやつをShowCommandsで修正したものを読み込み
 		commandList=ForComUnfolding(commandList);
 
 		rb = GetComponent<Rigidbody>();

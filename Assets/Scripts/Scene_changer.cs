@@ -25,7 +25,7 @@ public class Scene_changer : MonoBehaviour {
 //		coms=ReadComFile();
 
 		coms=DataManager.Instance.fixedBlockCodes.ToArray();
-
+		DataManager.Instance.gameCodes=DataManager.Instance.fixedBlockCodes.ToArray();
 		int button_pos = 0;
 		//以上、コマンドの読み取り
 //		coms = imaginary_commands;
@@ -98,8 +98,21 @@ public class Scene_changer : MonoBehaviour {
 			indent -= 40;
 		}
 		int vertical_pos = num * button_height;
+//		bool buttonClick = false;
 		//http://docs.unity3d.com/jp/current/ScriptReference/Rect.html
-		GUI.Button (new Rect (20 + indent, vertical_pos, button_width, button_height), comName,buttonGuiSkin.GetStyle ("button"));
+		if(GUI.Button (new Rect (20 + indent, vertical_pos, button_width, button_height), comName,buttonGuiSkin.GetStyle ("button"))){
+			//ボタンが押された時の挙動
+			if(com.Contains("for")){// .Contains() -> http://www.atmarkit.co.jp/fdotnet/dotnettips/411contains/contains.html
+				int itr_num=0;
+				if (com == "end_for") {
+				} else {
+					itr_num=int.Parse(com.Split(',')[1]);
+					itr_num+=1;
+					coms[num]="for,"+itr_num;
+					DataManager.Instance.gameCodes = coms;
+				}
+			}
+		};
 
 		//indent
 		if (com.Contains ("for")) {

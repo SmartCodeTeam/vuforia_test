@@ -15,7 +15,7 @@ public class ToComsCheck : MonoBehaviour {
 			//あとはforの回数のフォーマットとかをつくる
 			string[] parts=preComs[i].Split(null);//parts=["for","(1)"]とかになってたりする。
 			if(parts[0]=="for"){
-				parts [0] = "for,3";				
+				parts [0] = "for,1";				
 			}
 			DataManager.Instance.fixedBlockCodes.Add(parts[0]);
 		}

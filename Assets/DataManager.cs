@@ -20,6 +20,8 @@ public class DataManager : MonoBehaviour {
 	public List<string> blockCodes = new List<string>();
 	public List<string> fixedBlockCodes = new List<string>();
 	public string commandText="";
+	public string[] gameCodes={};
+
 
 	public static DataManager Instance{
 		get{
