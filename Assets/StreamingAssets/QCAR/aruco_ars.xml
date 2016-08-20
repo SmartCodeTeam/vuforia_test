@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="left4" size="20.000000 6.541275" />
+    <ImageTarget name="left3" size="20.000000 6.541275" />
+    <ImageTarget name="left2" size="20.000000 6.541275" />
+    <ImageTarget name="down4" size="20.000000 5.356843" />
+    <ImageTarget name="down3" size="20.000000 5.356843" />
+    <ImageTarget name="down2" size="20.000000 5.356843" />
+    <ImageTarget name="right4" size="20.000000 5.663402" />
+    <ImageTarget name="right3" size="20.000000 5.663402" />
+    <ImageTarget name="right2" size="20.000000 5.663402" />
+    <ImageTarget name="end_for3" size="20.000000 7.337662" />
+    <ImageTarget name="end_for2" size="20.000000 7.337662" />
+    <ImageTarget name="for3" size="20.000000 8.686869" />
+    <ImageTarget name="for2" size="20.000000 8.686869" />
+    <ImageTarget name="up4" size="20.000000 7.447307" />
+    <ImageTarget name="up3" size="20.000000 7.447307" />
+    <ImageTarget name="up2" size="20.000000 7.447307" />
     <ImageTarget name="st_up" size="10.000000 3.723653" />
     <ImageTarget name="st_left" size="10.000000 3.270638" />
     <ImageTarget name="st_for" size="10.000000 4.343434" />
     <ImageTarget name="st_end_for" size="10.000000 3.668831" />
     <ImageTarget name="st_down" size="10.000000 2.678421" />
     <ImageTarget name="st_right" size="10.000000 2.831701" />
-    <ImageTarget name="end_for" size="10.000000 4.092664" />
-    <ImageTarget name="for" size="10.000000 3.787234" />
-    <ImageTarget name="left" size="10.000000 3.770492" />
-    <ImageTarget name="right" size="10.000000 3.252595" />
-    <ImageTarget name="down" size="10.000000 2.885906" />
-    <ImageTarget name="up" size="10.000000 4.682927" />
     <ImageTarget name="7596b7ab0d377c5d4a3a5883feebf37c4f42a75e" size="100.000000 75.000000" />
-    <ImageTarget name="tokyo_1960" size="100.000000 62.461540" />
   </Tracking>
 </QCARConfig>
