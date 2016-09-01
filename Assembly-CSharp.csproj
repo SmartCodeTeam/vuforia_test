@@ -45,19 +45,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DataManager.cs" />
-     <Compile Include="Assets\FocusMode.cs" />
-     <Compile Include="Assets\GetPosInCameraFlame.cs" />
+     <Compile Include="Assets\Scripts\CameraAxis.cs" />
+     <Compile Include="Assets\Scripts\Continuous_Command2.cs" />
+     <Compile Include="Assets\Scripts\Continuous_Command_Get.cs" />
+     <Compile Include="Assets\Scripts\DataManager.cs" />
+     <Compile Include="Assets\Scripts\FocusMode.cs" />
+     <Compile Include="Assets\Scripts\GetPosInCameraFlame.cs" />
      <Compile Include="Assets\Scripts\Scene_changer.cs" />
      <Compile Include="Assets\Scripts\Scene_changer1.cs" />
+     <Compile Include="Assets\Scripts\ToComsCheck.cs" />
+     <Compile Include="Assets\Scripts\ToComsCheckFromGame.cs" />
+     <Compile Include="Assets\Scripts\ToComsTakeFromComsCheck.cs" />
+     <Compile Include="Assets\Scripts\ToComsTakeFromGame.cs" />
+     <Compile Include="Assets\Scripts\ToGameWithComs.cs" />
+     <Compile Include="Assets\Scripts\ToMenuFromGame.cs" />
+     <Compile Include="Assets\Scripts\ToMiniGames.cs" />
      <Compile Include="Assets\Scripts\cameraControl.cs" />
+     <Compile Include="Assets\Scripts\getBlockComs.cs" />
      <Compile Include="Assets\Scripts\hurdle_set.cs" />
      <Compile Include="Assets\Scripts\moveBall.cs" />
-     <Compile Include="Assets\ToComsCheck.cs" />
-     <Compile Include="Assets\ToComsCheckFromGame.cs" />
-     <Compile Include="Assets\ToMiniGames.cs" />
+     <Compile Include="Assets\Scripts\resetButton.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
+     <Compile Include="Assets\Vuforia\Scripts\ComDisp.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\DatabaseLoadBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
@@ -98,7 +108,7 @@
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\positionDisp.cs" />
      <Compile Include="Assets\Vuforia\Scripts\positionGetter.cs" />
-     <Compile Include="Assets\getBlockComs.cs" />
+     <Compile Include="Assets\initialize.cs" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\link.xml" />
      <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />

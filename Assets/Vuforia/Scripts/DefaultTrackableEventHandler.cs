@@ -47,21 +47,41 @@ namespace Vuforia
                                         TrackableBehaviour.Status previousStatus,
                                         TrackableBehaviour.Status newStatus)
         {
-            if (newStatus == TrackableBehaviour.Status.DETECTED ||
-                newStatus == TrackableBehaviour.Status.TRACKED ||
-                newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
-            {
+//            if (newStatus == TrackableBehaviour.Status.DETECTED ||
+//                newStatus == TrackableBehaviour.Status.TRACKED ||
+//                newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+//            {
+//				//加えた(2016/8/10)
+//				DataManager.Instance.blockStatus.Remove(name);
+//				DataManager.Instance.blockStatus.Add(name,1);
+//				//ここまで
+//                OnTrackingFound();
+//            }
+			//if を2パートに
+			if (newStatus == TrackableBehaviour.Status.DETECTED)
+			{
 				//加えた(2016/8/10)
 				DataManager.Instance.blockStatus.Remove(name);
 				DataManager.Instance.blockStatus.Add(name,1);
+				DataManager.Instance.NewDetected=name;
 				//ここまで
-                OnTrackingFound();
-            }
+				OnTrackingFound();
+			}else if(newStatus == TrackableBehaviour.Status.TRACKED ||
+				newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+			{
+				DataManager.Instance.blockStatus.Remove(name);
+				DataManager.Instance.blockStatus.Add(name,1);
+				DataManager.Instance.NewDetected=name;
+				//ここまで
+				OnTrackingFound();
+			}
+			//2パートにしたの終わり
             else
             {
 				//加えた(2016/8/10)
 				DataManager.Instance.blockStatus.Remove(name);
 				DataManager.Instance.blockStatus.Add(name,0);
+				DataManager.Instance.NewLost=name;
 				//ここまで
                 OnTrackingLost();
             }
