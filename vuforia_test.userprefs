@@ -1,17 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Continuous_Command2.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ToComsTakeFromComsCheck.cs">
     <Files>
-      <File FileName="Assets/Scripts/Scene_changer.cs" Line="28" Column="33" />
-      <File FileName="Assets/Scripts/moveBall.cs" Line="34" Column="56" />
+      <File FileName="Assets/Scripts/ToComsTakeFromGame.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Scene_changer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/moveBall.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/cameraControl.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Scene_changer1.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ToComsTakeFromGame.cs" Line="10" Column="80" />
-      <File FileName="Assets/Scripts/ToMenuFromGame.cs" Line="9" Column="35" />
-      <File FileName="Assets/Scripts/ToComsTakeFromComsCheck.cs" Line="2" Column="26" />
-      <File FileName="Assets/initialize.cs" Line="13" Column="18" />
-      <File FileName="Assets/Scripts/DataManager.cs" Line="27" Column="44" />
-      <File FileName="Assets/Scripts/Continuous_Command2.cs" Line="9" Column="32" />
+      <File FileName="Assets/Scripts/ToMenuFromGame.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ToComsTakeFromComsCheck.cs" Line="14" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
