@@ -1,14 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ToComsTakeFromComsCheck.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Suriyun/Script/AnimatorController.cs">
     <Files>
+      <File FileName="Assets/Suriyun/Script/AnimatorController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ToComsTakeFromGame.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Scene_changer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/moveBall.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/cameraControl.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Scene_changer1.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ToMenuFromGame.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ToComsTakeFromComsCheck.cs" Line="14" Column="1" />
+      <File FileName="Assets/MrRabZ/RabbitActionController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
