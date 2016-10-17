@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="left_3" size="10.000000 3.355049" />
+    <ImageTarget name="left_2" size="10.000000 3.355049" />
+    <ImageTarget name="left_1" size="10.000000 3.355049" />
+    <ImageTarget name="right_3" size="10.000000 3.365854" />
+    <ImageTarget name="right_2" size="10.000000 3.365854" />
+    <ImageTarget name="right_1" size="10.000000 3.365854" />
+    <ImageTarget name="walk_4" size="10.000000 3.387622" />
+    <ImageTarget name="walk_3" size="10.000000 3.387622" />
+    <ImageTarget name="walk_2" size="10.000000 3.387622" />
+    <ImageTarget name="walk_1" size="10.000000 3.387622" />
+    <ImageTarget name="end_for_3" size="10.000000 3.382353" />
+    <ImageTarget name="end_for_2" size="10.000000 3.382353" />
+    <ImageTarget name="end_for_1" size="10.000000 3.382353" />
+    <ImageTarget name="forinf_1" size="10.000000 3.365854" />
+    <ImageTarget name="for6_3" size="10.000000 3.382114" />
+    <ImageTarget name="for6_2" size="10.000000 3.382114" />
+    <ImageTarget name="for6_1" size="10.000000 3.382114" />
+    <ImageTarget name="for5_3" size="10.000000 3.371336" />
+    <ImageTarget name="for5_2" size="10.000000 3.371336" />
+    <ImageTarget name="for5_1" size="10.000000 3.371336" />
+    <ImageTarget name="for4_3" size="10.000000 3.360522" />
+    <ImageTarget name="for4_2" size="10.000000 3.360522" />
+    <ImageTarget name="for4_1" size="10.000000 3.360522" />
+    <ImageTarget name="for3_3" size="10.000000 3.387622" />
+    <ImageTarget name="for3_2" size="10.000000 3.387622" />
+    <ImageTarget name="for3_1" size="10.000000 3.387622" />
+    <ImageTarget name="for2_3" size="10.000000 3.371336" />
+    <ImageTarget name="for2_2" size="10.000000 3.371336" />
+    <ImageTarget name="for2_1" size="10.000000 3.371336" />
+    <ImageTarget name="for1_3" size="10.000000 3.376835" />
+    <ImageTarget name="for1_2" size="10.000000 3.376835" />
+    <ImageTarget name="for1_1" size="10.000000 3.376835" />
+  </Tracking>
+</QCARConfig>
