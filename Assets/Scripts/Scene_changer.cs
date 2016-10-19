@@ -91,6 +91,8 @@ public class Scene_changer : MonoBehaviour {
 			comName="Up";
 		}else if(com=="down"){
 			comName="Down";
+		}else if(com=="walk"){
+			comName="Walk";
 		}else if(com=="if"){
 			comName="If";
 		}else if(com=="end_if"){

@@ -1,16 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ToComsCheck.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/lower_detector.cs">
     <Files>
-      <File FileName="Assets/Scripts/ToComsCheck.cs" Line="30" Column="1" />
-      <File FileName="Assets/Suriyun/Script/AnimatorController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ToComsTakeFromGame.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Scene_changer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/cameraControl.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Scene_changer1.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ToMenuFromGame.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ToComsTakeFromComsCheck.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Continuous_Command2.cs" Line="1" Column="1" />
+      <File FileName="Assets/contactManagement.cs" Line="59" Column="31" />
+      <File FileName="Assets/Scripts/DataManager.cs" Line="37" Column="1" />
+      <File FileName="Assets/Scripts/GetPosInCameraFlame.cs" Line="1" Column="1" />
+      <File FileName="Assets/lower_detector.cs" Line="6" Column="33" />
+      <File FileName="Assets/upper_detector.cs" Line="1" Column="1" />
+      <File FileName="Assets/Vuforia/Scripts/DefaultTrackableEventHandler.cs" Line="135" Column="1" />
+      <File FileName="Assets/Scripts/ToComsCheck.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Continuous_Command2.cs" Line="222" Column="27" />
+      <File FileName="Assets/Scripts/resetButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Vuforia/Scripts/ComDisp.cs" Line="4" Column="1" />
+      <File FileName="Assets/Scripts/Scene_changer.cs" Line="95" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
