@@ -16,3 +16,5 @@
 /Users/go/acco/vuforia_test/Temp/bin/Debug/Assembly-CSharp.dll
 /Users/go/acco/vuforia_test/obj/Debug/Assembly-CSharp.dll
 /Users/go/acco/vuforia_test/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/go/acco/vuforia_test/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/go/acco/vuforia_test/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb

@@ -9,15 +9,18 @@ using System.Collections.Generic;
 public class moveCharacter : MonoBehaviour {
 
 	public float speed;
+	public float rotation_speed;
 	public  int _currentCommandNum =  0;
 
 	private float _currentPosX = 0;
-	private float _currentPosY = 0;
+//	private float _currentPosY = 0;
 	private float _currentPosZ = 0;
+	private float _currentDir = 90;
 
 	private float _posX;
-	private float _posY;
+//	private float _posY;
 	private float _posZ;
+	private float _dir;
 
 	private float onegrid = 3;
 	private string[] commandList = {};
@@ -62,8 +65,15 @@ public class moveCharacter : MonoBehaviour {
 	void Update ()
 	{
 		_posX = controller.transform.position.x;//x+-が右左
-		_posY = controller.transform.position.y;
+//		_posY = controller.transform.position.y;
 		_posZ = controller.transform.position.z;
+
+		_dir = transform.eulerAngles.y;
+
+//		_dirVec = new Vector3 (Mathf.Cos (angleDir),0.0f , Mathf.Sin (angleDir));
+
+		Debug.Log(_dir);
+
 
 		//コマンド実行
 		CommandSwitching(commandList);
@@ -77,12 +87,14 @@ public class moveCharacter : MonoBehaviour {
 		else if (_characterState == CharacterState.RIGHT) {
 //			Debug.Log ("Character State is RIGHT");
 			animator.SetBool ("Run", true);
-			controller.transform.Translate (speed*Vector3.forward * Time.deltaTime);
+			controller.transform.Rotate(rotation_speed*Vector3.up * Time.deltaTime);
+			//controller.transform.Translate (speed*Vector3.forward * Time.deltaTime);
 		} 
 		else if (_characterState == CharacterState.LEFT) {
 //			Debug.Log ("Character State is LEFT");
 			animator.SetBool ("Run", true);
-			controller.transform.Translate (speed*Vector3.back * Time.deltaTime);
+			controller.transform.Rotate(-rotation_speed*Vector3.up * Time.deltaTime);
+//			controller.transform.Translate (speed*Vector3.back * Time.deltaTime);
 		} 
 		else if (_characterState == CharacterState.UP) {
 //			Debug.Log ("Character State is UP");
@@ -102,8 +114,9 @@ public class moveCharacter : MonoBehaviour {
 			if (_currentCommandNum < commandList.Length) {
 			_currentCommandNum += 1;
 			_currentPosX = controller.transform.position.x;
-			_currentPosY = controller.transform.position.y;
+//			_currentPosY = controller.transform.position.y;
 			_currentPosZ = controller.transform.position.z;
+			_currentDir = controller.transform.eulerAngles.y;
 
 			_commandState = CommandState.READY;
 			}
@@ -126,18 +139,41 @@ public class moveCharacter : MonoBehaviour {
 				}
 			} else if (currentCommand == "right") {
 				_characterState = CharacterState.RIGHT;
-				float targetPosX = _currentPosX + onegrid;
-				if (_posX >= targetPosX) {
+
+				float targetDir = _currentDir + 90;
+				if (targetDir > 360) {
+					targetDir -= 360; 
+				}
+
+				if (_dir >= targetDir) {
 					_commandState = CommandState.CHANGING;
 					_characterState = CharacterState.IDLE;
 				}
+
+//				float targetPosX = _currentPosX + onegrid;
+//				if (_posX >= targetPosX) {
+//					_commandState = CommandState.CHANGING;
+//					_characterState = CharacterState.IDLE;
+//				}
 			} else if (currentCommand == "left") {
 				_characterState = CharacterState.LEFT;
-				float targetPosX = _currentPosX - onegrid;
-				if (_posX <= targetPosX) {
+
+				float targetDir = _currentDir - 90;
+				Debug.Log (targetDir);
+				if (targetDir < 0) {
+					targetDir = 360 + targetDir; 
+				}
+
+				if (_dir <= targetDir) {
 					_commandState = CommandState.CHANGING;
 					_characterState = CharacterState.IDLE;
 				}
+
+//				float targetPosX = _currentPosX - onegrid;
+//				if (_posX <= targetPosX) {
+//					_commandState = CommandState.CHANGING;
+//					_characterState = CharacterState.IDLE;
+//				}
 			}
 		}
 	}
@@ -247,7 +283,4 @@ public class moveCharacter : MonoBehaviour {
 		//		//出力
 		return fixed_commandList;
 	}
-		
-
-
 }
