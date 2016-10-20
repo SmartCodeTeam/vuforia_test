@@ -65,7 +65,7 @@
      <Compile Include="Assets\Scripts\hurdle_set.cs" />
      <Compile Include="Assets\Scripts\moveBall.cs" />
      <Compile Include="Assets\Scripts\moveCharacter.cs" />
-     <Compile Include="Assets\Scripts\moveCharacterByrotation.cs" />
+     <Compile Include="Assets\Scripts\moveCharacterByRotation.cs" />
      <Compile Include="Assets\Scripts\resetButton.cs" />
      <Compile Include="Assets\Suriyun\Script\AnimatorController.cs" />
      <Compile Include="Assets\TextStatus.cs" />
