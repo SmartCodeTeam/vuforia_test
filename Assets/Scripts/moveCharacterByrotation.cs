@@ -8,21 +8,15 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Animator))]
 public class moveCharacterByRotation : MonoBehaviour {
 
-	public float speed;
-	public float rotation_speed;
+	public float speed = 5;
+	public float rotation_speed = 80;
 	public  int _currentCommandNum =  0;
-
-	private float _currentPosX = 0;
-	//	private float _currentPosY = 0;
-	private float _currentPosZ = 0;
+	private Vector3 _position;
+	private Vector3 _currentPosition;
 	private float _currentDir = 90;
-
-	private float _posX;
-	//	private float _posY;
-	private float _posZ;
 	private float _dir;
+	private Vector3 _dirVec;
 
-	private float onegrid = 3;
 	private string[] commandList = {};
 
 	private Animator animator;
@@ -33,8 +27,7 @@ public class moveCharacterByRotation : MonoBehaviour {
 		IDLE = 0,
 		RIGHT = 1,
 		LEFT = 2,
-		UP = 3,
-		DOWN = 4
+		WALK = 3
 	};
 
 	enum CommandState {
@@ -50,8 +43,8 @@ public class moveCharacterByRotation : MonoBehaviour {
 
 	void Start ()
 	{
-		_currentPosX = transform.position.x;
-		_currentPosZ = transform.position.z;
+		_currentPosition = transform.position;
+
 
 		//y軸周りの回転角を入手
 		_currentDir = transform.eulerAngles.y;
@@ -67,25 +60,20 @@ public class moveCharacterByRotation : MonoBehaviour {
 
 	void Update ()
 	{
-		_posX = controller.transform.position.x;//x+-が右左
-		//		_posY = controller.transform.position.y;
-		_posZ = controller.transform.position.z;
+		
 
+	
 		_dir = transform.eulerAngles.y;
-
-		//		_dirVec = new Vector3 (Mathf.Cos (angleDir),0.0f , Mathf.Sin (angleDir));
-
-		Debug.Log(_dir);
-
+		_position = transform.position;
 
 		//コマンド実行
+		Debug.Log(commandList);
 		CommandSwitching(commandList);
 
 
 		if (_characterState == CharacterState.IDLE) {
 			//			Debug.Log ("Character State is IDLE");
 			animator.SetBool ("Run", false);
-
 		} 
 		else if (_characterState == CharacterState.RIGHT) {
 			//			Debug.Log ("Character State is RIGHT");
@@ -99,16 +87,12 @@ public class moveCharacterByRotation : MonoBehaviour {
 			controller.transform.Rotate(-rotation_speed*Vector3.up * Time.deltaTime);
 			//			controller.transform.Translate (speed*Vector3.back * Time.deltaTime);
 		} 
-		else if (_characterState == CharacterState.UP) {
-			//			Debug.Log ("Character State is UP");
+		else if (_characterState == CharacterState.WALK) {
+			//			Debug.Log ("Character State is WALK");
 			animator.SetBool ("Run", true);
-			controller.transform.Translate (speed*Vector3.left * Time.deltaTime);
+			controller.transform.Translate (speed * new Vector3 (0,0,1)  * Time.deltaTime);
+
 		} 
-		else if (_characterState == CharacterState.DOWN) {
-			//			Debug.Log ("Character State is DOWN");
-			animator.SetBool ("Run", true);
-			controller.transform.Translate (speed*Vector3.right * Time.deltaTime);
-		}
 	}
 
 	//Command State が　CHANGINGになった時にcommand_numを更新
@@ -116,9 +100,9 @@ public class moveCharacterByRotation : MonoBehaviour {
 		if(_commandState == CommandState.CHANGING){
 			if (_currentCommandNum < commandList.Length) {
 				_currentCommandNum += 1;
-				_currentPosX = controller.transform.position.x;
-				//			_currentPosY = controller.transform.position.y;
-				_currentPosZ = controller.transform.position.z;
+
+				_currentPosition = controller.transform.position;
+
 				_currentDir = controller.transform.eulerAngles.y;
 
 				_commandState = CommandState.READY;
@@ -126,17 +110,12 @@ public class moveCharacterByRotation : MonoBehaviour {
 		}
 		if(_commandState == CommandState.READY) {
 			string currentCommand = commandList [_currentCommandNum];
-			if (currentCommand == "up") {
-				_characterState = CharacterState.UP;
-				float targetPosZ = _currentPosZ + onegrid;
-				if (_posZ >= targetPosZ) {
-					_commandState = CommandState.CHANGING;
-					_characterState = CharacterState.IDLE;
-				}
-			} else if (currentCommand == "down") {
-				_characterState = CharacterState.DOWN;
-				float targetPosZ = _currentPosZ - onegrid;
-				if (_posZ <= targetPosZ) {
+			if (currentCommand == "walk") {
+				//向いてる方向を取得
+				_dirVec = new Vector3 (Mathf.Sin (_currentDir * Mathf.PI/180),0.0f , Mathf.Cos (_currentDir* Mathf.PI/180));
+				_characterState = CharacterState.WALK;
+				Vector3 targetPosition = _currentPosition + _dirVec*3;
+				if (Vector3.Distance(targetPosition, _position) <= 0.1) {
 					_commandState = CommandState.CHANGING;
 					_characterState = CharacterState.IDLE;
 				}
@@ -157,12 +136,12 @@ public class moveCharacterByRotation : MonoBehaviour {
 				_characterState = CharacterState.LEFT;
 
 				float targetDir = _currentDir - 90;
-				Debug.Log (targetDir);
+//				Debug.Log (targetDir);
 				if (targetDir < 0) {
 					targetDir = 360 + targetDir; 
 				}
 
-				if (_dir <= targetDir) {
+				if (Mathf.Abs(_dir - targetDir) < 1.0 ) {
 					_commandState = CommandState.CHANGING;
 					_characterState = CharacterState.IDLE;
 				}
@@ -184,13 +163,6 @@ public class moveCharacterByRotation : MonoBehaviour {
 		}
 	}
 
-	void DelayMethod()
-	{
-		Debug.Log("Delay call");
-		//		Stop (rb);
-
-	}
-
 
 
 
@@ -201,11 +173,10 @@ public class moveCharacterByRotation : MonoBehaviour {
 		string line = "";
 		string[] coms_txt = {};
 		using(StreamReader sr = new StreamReader(fi.OpenRead(),Encoding.UTF8)){//一行ずつよみとり
-			//			string com=sr.ReadToEnd();
-			//			Debug.Log(com);
+
 			while ((line = sr.ReadLine()) != null){
 				//comsにlineを追加する。
-				Debug.Log(line);
+//				Debug.Log(line);
 				string[] result = new string[coms_txt.Length + 1];
 				for(int j=0;j< coms_txt.Length;j++ ){//見づらいコード。動的な配列を用いたほうがいい。
 					result[j]=coms_txt[j];
@@ -245,10 +216,6 @@ public class moveCharacterByRotation : MonoBehaviour {
 	public List<string> UnfoldFirstFor(List<string> fixed_commandList){//for_endが見つかった時点でそれに合致するfor(for_endにもっとも近いfor)を定めて展開する。ひとつだけ。
 		int index_end_for = fixed_commandList.IndexOf("end_for");//IndexOf ->http://dobon.net/vb/dotnet/programing/binarysearch.html
 		int index_for = fixed_commandList.LastIndexOf( "for",index_end_for);
-		Debug.Log ("for");
-		Debug.Log (index_for);
-		Debug.Log ("end_for");
-		Debug.Log (index_end_for);
 		//以下、forを展開する。
 		//ループ数取得
 		int loop_num=int.Parse(fixed_commandList[index_for+1]);
