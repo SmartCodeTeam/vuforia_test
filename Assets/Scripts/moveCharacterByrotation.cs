@@ -9,7 +9,7 @@ using System.Collections.Generic;
 public class moveCharacterByRotation : MonoBehaviour {
 
 	public float speed = 5;
-	public float rotation_speed = 80;
+	public float rotation_speed = 100;
 	public  int _currentCommandNum =  0;
 	private Vector3 _position;
 	private Vector3 _currentPosition;
@@ -51,9 +51,16 @@ public class moveCharacterByRotation : MonoBehaviour {
 
 		//		commandList=ReadComFile();//テキストからコマンド読み込み
 		commandList=DataManager.Instance.gameCodes;//VuforiaのやつをShowCommandsで修正したものを読み込み
-		commandList=ForComUnfolding(commandList);
 
-		animator = GetComponent<Animator> ();
+//		Debug.Log("commandList[0]");
+//		Debug.Log(commandList[0]);
+//		Debug.Log("commandList[1]");
+//		Debug.Log(commandList[1]);
+//		Debug.Log("commandList[2]");
+//		Debug.Log(commandList[2]);
+
+		commandList = ForComUnfolding(commandList);
+	animator = GetComponent<Animator> ();
 		controller = GetComponent<CharacterController> ();
 
 	}
@@ -61,13 +68,10 @@ public class moveCharacterByRotation : MonoBehaviour {
 	void Update ()
 	{
 		
-
-	
 		_dir = transform.eulerAngles.y;
 		_position = transform.position;
 
 		//コマンド実行
-		Debug.Log(commandList);
 		CommandSwitching(commandList);
 
 
@@ -127,7 +131,7 @@ public class moveCharacterByRotation : MonoBehaviour {
 					targetDir -= 360; 
 				}
 
-				if (_dir >= targetDir) {
+				if (Mathf.Abs(_dir - targetDir) < 1.0) {
 					_commandState = CommandState.CHANGING;
 					_characterState = CharacterState.IDLE;
 				}
@@ -163,10 +167,6 @@ public class moveCharacterByRotation : MonoBehaviour {
 		}
 	}
 
-
-
-
-
 	//以下並び替え用の関数なので別クラスにしたい
 	public string[] ReadComFile(){
 		FileInfo fi = new FileInfo (Application.dataPath+"/"+"ComFile.txt");
@@ -176,7 +176,7 @@ public class moveCharacterByRotation : MonoBehaviour {
 
 			while ((line = sr.ReadLine()) != null){
 				//comsにlineを追加する。
-//				Debug.Log(line);
+				//Debug.Log(line);
 				string[] result = new string[coms_txt.Length + 1];
 				for(int j=0;j< coms_txt.Length;j++ ){//見づらいコード。動的な配列を用いたほうがいい。
 					result[j]=coms_txt[j];
@@ -206,6 +206,7 @@ public class moveCharacterByRotation : MonoBehaviour {
 				modified.Add (line);
 			}
 		}//modifiedに {"for",5,"up","down",,,,}みたいに入った。
+			
 		while(modified.IndexOf("end_for")!=-1){
 			modified=UnfoldFirstFor(modified);
 		}
@@ -214,16 +215,24 @@ public class moveCharacterByRotation : MonoBehaviour {
 	}
 
 	public List<string> UnfoldFirstFor(List<string> fixed_commandList){//for_endが見つかった時点でそれに合致するfor(for_endにもっとも近いfor)を定めて展開する。ひとつだけ。
+
 		int index_end_for = fixed_commandList.IndexOf("end_for");//IndexOf ->http://dobon.net/vb/dotnet/programing/binarysearch.html
+//		Debug.Log(index_end_for);
 		int index_for = fixed_commandList.LastIndexOf( "for",index_end_for);
+//		Debug.Log (index_for);
 		//以下、forを展開する。
 		//ループ数取得
-		int loop_num=int.Parse(fixed_commandList[index_for+1]);
+		string string_loop_num = fixed_commandList[index_for+1];
+		int loop_num=int.Parse(string_loop_num);
+
+//		Debug.Log (fixed_commandList[index_for+1]);
+		Debug.Log (loop_num);
 		//ループさせるエリアのコマンド配列の取得(in_forsに格納)
 		List<string> in_fors = new List<string>();
-		for(int i=0;i<index_end_for-index_for-1;i++){
-			in_fors.Add (fixed_commandList[index_for+1+i]);
+		for(int i=0;i<index_end_for-index_for-2;i++){
+			in_fors.Add (fixed_commandList[index_for+2+i]);
 		}
+//		Debug.Log (in_fors);
 		//元のコマンドを削除、ループ数倍したin_forsを挿入
 		List<string> new_coms= new List<string>();
 		for(int i=0;i<index_for;i++){
@@ -236,7 +245,10 @@ public class moveCharacterByRotation : MonoBehaviour {
 			new_coms.Add (fixed_commandList[index_end_for+1+i]);
 		}
 		fixed_commandList = new_coms;
-		//		//出力
+		Debug.Log(fixed_commandList.ToArray ().Length);
+		Debug.Log (fixed_commandList [2]);
+
 		return fixed_commandList;
+
 	}
 }
