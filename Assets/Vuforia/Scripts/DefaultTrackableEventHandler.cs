@@ -61,7 +61,7 @@ namespace Vuforia
 			if (newStatus == TrackableBehaviour.Status.DETECTED)
 			{
 				//加えた(2016/8/10)
-				DataManager.Instance.blockStatus.Remove(name);
+				DataManager.Instance.blockStatus.Remove(name);//ディクショナリのAddは上書き機能がない為、Removeしてる。(インデクサならok)
 				DataManager.Instance.blockStatus.Add(name,1);
 				DataManager.Instance.NewDetected=name;
 				//ここまで

@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\moveCharacter.cs" />
      <Compile Include="Assets\Scripts\resetButton.cs" />
      <Compile Include="Assets\Suriyun\Script\AnimatorController.cs" />
+     <Compile Include="Assets\TextStatus.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\ComDisp.cs" />
@@ -110,7 +111,10 @@
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\positionDisp.cs" />
      <Compile Include="Assets\Vuforia\Scripts\positionGetter.cs" />
+     <Compile Include="Assets\contactManagement.cs" />
      <Compile Include="Assets\initialize.cs" />
+     <Compile Include="Assets\lower_detector.cs" />
+     <Compile Include="Assets\upper_detector.cs" />
      <None Include="Assets\Suriyun\momo\UnityChanShader_v1.2.1\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\Suriyun\momo\UnityChanShader_v1.2.1\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
@@ -147,7 +151,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="Vuforia.UnityExtensions">
- <HintPath>/Users/Yoshihiko/vuforia_test/Assets/Vuforia/Scripts/Internal/Vuforia.UnityExtensions.dll</HintPath>
+ <HintPath>/Users/Yoshihiko/coding/vuforia_test/Assets/Vuforia/Scripts/Internal/Vuforia.UnityExtensions.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
