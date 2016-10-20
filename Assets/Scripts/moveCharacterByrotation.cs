@@ -6,7 +6,7 @@ using System.Text;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Animator))]
-public class moveCharacter : MonoBehaviour {
+public class moveCharacterByRotation : MonoBehaviour {
 
 	public float speed;
 	public float rotation_speed;
@@ -52,6 +52,9 @@ public class moveCharacter : MonoBehaviour {
 	{
 		_currentPosX = transform.position.x;
 		_currentPosZ = transform.position.z;
+
+		//y軸周りの回転角を入手
+		_currentDir = transform.eulerAngles.y;
 
 		//		commandList=ReadComFile();//テキストからコマンド読み込み
 		commandList=DataManager.Instance.gameCodes;//VuforiaのやつをShowCommandsで修正したものを読み込み
@@ -150,11 +153,6 @@ public class moveCharacter : MonoBehaviour {
 					_characterState = CharacterState.IDLE;
 				}
 
-				//				float targetPosX = _currentPosX + onegrid;
-				//				if (_posX >= targetPosX) {
-				//					_commandState = CommandState.CHANGING;
-				//					_characterState = CharacterState.IDLE;
-				//				}
 			} else if (currentCommand == "left") {
 				_characterState = CharacterState.LEFT;
 
@@ -169,11 +167,6 @@ public class moveCharacter : MonoBehaviour {
 					_characterState = CharacterState.IDLE;
 				}
 
-				//				float targetPosX = _currentPosX - onegrid;
-				//				if (_posX <= targetPosX) {
-				//					_commandState = CommandState.CHANGING;
-				//					_characterState = CharacterState.IDLE;
-				//				}
 			}
 		}
 	}
@@ -197,10 +190,6 @@ public class moveCharacter : MonoBehaviour {
 		//		Stop (rb);
 
 	}
-
-
-
-
 
 
 
