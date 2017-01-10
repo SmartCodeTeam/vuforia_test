@@ -24,6 +24,9 @@ public class lower_detector : MonoBehaviour {
 		}
 		if (guess != other.gameObject.transform.parent.name) {
 			timeElapsed = 0.0f;
+			//推定するアイテムが変わったら、OnTriggerExitしてなくても削除
+			DataManager.Instance.Connections.Remove (gameObject.transform.parent.name);
+			DataManager.Instance.Connections.Add (gameObject.transform.parent.name,"none");
 			guess = other.gameObject.transform.parent.name;
 		}
 		timeElapsed += Time.deltaTime;

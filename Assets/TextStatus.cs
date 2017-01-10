@@ -20,6 +20,7 @@ public class TextStatus : MonoBehaviour {
 			gameObject.GetComponent<TextMesh> ().text = "***";
 		} else {
 			gameObject.GetComponent<TextMesh> ().text = "OK";
+//			gameObject.GetComponent<TextMesh> ().text = gameObject.transform.parent.name;
 		}
 	}
 }
