@@ -1,15 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/lower_detector.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/moveCharacterByrotation.cs">
     <Files>
-      <File FileName="Assets/contactManagement.cs" Line="51" Column="37" />
-      <File FileName="Assets/Scripts/moveCharacter.cs" Line="70" Column="1" />
+      <File FileName="Assets/Scripts/moveCharacterByrotation.cs" Line="18" Column="23" />
+      <File FileName="Assets/Vuforia/Scripts/ComDisp1.cs" Line="1" Column="1" />
+      <File FileName="Assets/contactManagement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/moveCharacter.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/moveBall.cs" Line="1" Column="1" />
       <File FileName="Assets/lower_detector.cs" Line="31" Column="4" />
-      <File FileName="Assets/TextStatus.cs" Line="22" Column="80" />
       <File FileName="Assets/Vuforia/Scripts/ComDisp.cs" Line="1" Column="1" />
-      <File FileName="Assets/Vuforia/Scripts/ComDisp1.cs" Line="27" Column="3" />
-      <File FileName="Assets/Scripts/DataManager.cs" Line="38" Column="25" />
+      <File FileName="Assets/Scripts/DataManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

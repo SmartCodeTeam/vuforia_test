@@ -6,7 +6,7 @@ using System.Text;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Animator))]
-public class moveCharacterByRotation : MonoBehaviour {
+public class moveCharacterByrotation : MonoBehaviour {
 
 	public float speed = 5;
 	public float rotation_speed = 100;
